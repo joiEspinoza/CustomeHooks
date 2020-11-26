@@ -3,8 +3,14 @@
 Ejemplo de uso: 
 ```
 
-const initialForm = { name : "", age : 0, email : "" };
+const [ formValues, handleInputChange, reset ] = useForm( { name : "", email : "" } );
 
-const [ formValues, handleInputChange, reset ] = useForm( initialForm )
+const { name, email } = formValues;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+<input type="text" placeholder="name" |||name="name"||| value={ name } onChange={ handleInputChange }/>
+
+<input type="text" placeholder="email" |||name="email"||| value={ email } onChange={ handleInputChange }/>
 
 ```
